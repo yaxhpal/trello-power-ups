@@ -1,0 +1,16 @@
+{
+  "name": "trello-power-ups",
+  "version": "1.0.0",
+  "description": "A little Trello Card Count Powerup",
+  "main": "index.js",
+  "repository": "https://github.com/yaxhpal/trello-power-ups.git",
+  "author": "Yashpal Meena <yaxhpal@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts":{
+    "build": "parcel build src/html/*.html"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
