@@ -3,7 +3,7 @@ console.log('Hurray! I am called.');
 var btnCallback = function (t, opts) {
   return t.popup({
     title: 'List Stats',
-    url: '../html/list-stats.html',
+    url: 'list-stats.html',
     args: { nargs: opts},
     height: 278 // initial height, can be changed later
   });
