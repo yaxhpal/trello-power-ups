@@ -3,6 +3,7 @@ window.TrelloPowerUp.initialize({
     'list-actions': function (t) {
       return t.list('name', 'id')
       .then(function (list) {
+        console.log(JSON.stringify(list, null, 2));
         return [{
           text: "Get List Stats",
           callback: function (t) {
