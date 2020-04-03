@@ -21,3 +21,20 @@ window.TrelloPowerUp.initialize({
       });
     }
 });
+
+
+// This code sample uses the 'node-fetch' library:
+// https://www.npmjs.com/package/node-fetch
+import fetch from 'node-fetch';
+listName = 'Close[25]';
+fetch('https://api.trello.com/1/lists/5e79eedda3843225f5d57f9b?name='+listName, {
+  method: 'PUT'
+})
+  .then(response => {
+    console.log(
+      `Response: ${response.status} ${response.statusText}`
+    );
+    return response.text();
+  })
+  .then(text => console.log(text))
+  .catch(err => console.error(err));
