@@ -1,6 +1,4 @@
 var btnCallback = function (t, opts) {
-  console.log(JSON.stringify(t));
-  console.log(JSON.stringify(opts));
   window.Trello.put('/lists/5e79eedda3843225f5d57f9b', {name: 'Closed[]'});
   return t.popup({
     title: 'List Stats',
