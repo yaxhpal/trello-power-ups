@@ -10,13 +10,15 @@ var authenticationSuccess = function () {
             data.forEach(list => {
                 list_id = list['id'];
                 list_name = list['name'];
-                allListNames[list_id] = list_name
+                allListNames[list_id] = list_name;
                 console.log(`List id: ${list_id} and name: ${list_name}.`);
                 window.Trello.get(`lists/${list_id}/cards`, function(data) {
                     cards_count = data.length;
-                    list_id = data['idList'];
-                    list_name = allListNames[list_id];
-                    window.Trello.put(`lists/${list_id}`, {name: `${list_name}[${cards_count}]`});   
+                    if (cards_count > 0) {
+                        card_list_id = data[0]['idList']
+                        card_list_name = allListNames[card_list_id]
+                        window.Trello.put(`lists/${card_list_id}`, {name: `${card_list_name}[${cards_count}]`});
+                    }
                 }, gotError);
             });
         }
