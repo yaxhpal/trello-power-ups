@@ -11,11 +11,9 @@ var authenticationSuccess = function () {
                 list_id = list['id'];
                 list_name = list['name'];
                 console.log(`List id: ${list_id} and name: ${list_name}.`);
-                window.Trello.get(`lists/${list_id}/cards`, function(data) {
+                window.Trello.get(`lists/${list_id}/cards`, function(data, list_id, list_name) {
                     cards_count = data.length;
-                    if (cards_count > 0) {
-                        window.Trello.put(`lists/${list_id}`, {name: `${list_name}[${cards_count}]`});
-                    }   
+                    window.Trello.put(`lists/${list_id}`, {name: `${list_name}[${cards_count}]`});   
                 }, gotError);
 
             });
