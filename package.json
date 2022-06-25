@@ -11,7 +11,7 @@
     "build": "parcel build src/html/*.html"
   },
   "devDependencies": {
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "parcel-bundler": "^1.12.4"
   }
 }
